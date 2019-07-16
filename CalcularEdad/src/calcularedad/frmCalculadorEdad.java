@@ -27,6 +27,9 @@ FileOutputStream salida;
 
     public frmCalculadorEdad() {
         initComponents();
+        this.setTitle("Manuel De Mesa Ing. Software");
+        this.setLocationRelativeTo(frmCalculadorEdad.this);
+        this.setResizable(false);
     }
 public String AbrirArchivo (File archivo){
     String documento = "";
@@ -69,6 +72,7 @@ public String GuardarArchivo (File archivo,String documento){
         txtrespuesta = new javax.swing.JTextField();
         btnguardar = new javax.swing.JButton();
         btnabrir = new javax.swing.JButton();
+        btnsalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -114,19 +118,28 @@ public String GuardarArchivo (File archivo,String documento){
             }
         });
 
+        btnsalir.setText("SALIR");
+        btnsalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnsalirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(52, 52, 52)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(btnabrir)
-                            .addGap(37, 37, 37)
-                            .addComponent(btnguardar))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnsalir)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 264, Short.MAX_VALUE)
+                        .addComponent(btnabrir)
+                        .addGap(37, 37, 37)
+                        .addComponent(btnguardar))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel1)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(0, 329, Short.MAX_VALUE)
@@ -153,7 +166,8 @@ public String GuardarArchivo (File archivo,String documento){
                 .addGap(57, 57, 57)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnguardar)
-                    .addComponent(btnabrir))
+                    .addComponent(btnabrir)
+                    .addComponent(btnsalir))
                 .addContainerGap(60, Short.MAX_VALUE))
         );
 
@@ -217,6 +231,10 @@ public String GuardarArchivo (File archivo,String documento){
         }
     }//GEN-LAST:event_btnabrirActionPerformed
 
+    private void btnsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnsalirActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -257,6 +275,7 @@ public String GuardarArchivo (File archivo,String documento){
     private javax.swing.JButton btncalcular;
     private javax.swing.JButton btnguardar;
     private javax.swing.JButton btnnuevo;
+    private javax.swing.JButton btnsalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField txtfecha;
     private javax.swing.JTextField txtrespuesta;
